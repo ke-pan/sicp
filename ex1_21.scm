@@ -1,0 +1,13 @@
+(define (smallest-divisor n)
+  (define (iter i n)
+          (cond ((> (square i) n) n)
+                ((= (remainder n i) 0) i)
+                (else (iter (+ i 1) n))
+          )
+  )
+  (iter 2 n)
+)
+
+(smallest-divisor 199)
+(smallest-divisor 1999)
+(smallest-divisor 19999)
