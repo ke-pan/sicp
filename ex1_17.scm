@@ -1,0 +1,10 @@
+(define (double a) (+ a a))
+(define (halve a) (/ a 2))
+(define (mul a b)
+        (cond ((= b 0) 0)
+              ((even? b) (double (mul a (halve b))))
+              (else (+ (mul a (- b 1)) a))
+        )
+)
+
+(mul 4 4)
