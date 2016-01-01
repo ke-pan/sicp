@@ -1,0 +1,6 @@
+(define (tan-cf x k)
+  (define (rec i)
+    (cond ((= i 1) (/ x (- 1 (rec (+ 1 i)))))
+          ((> i k) 0)
+          (else (/ (square x) (- (- (* 2 i) 1) (rec (+ 1 i)))))))
+  (rec 1))
